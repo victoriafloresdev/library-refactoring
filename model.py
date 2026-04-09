@@ -1,3 +1,28 @@
+from abc import ABC, abstractmethod
+
+
+class Price(ABC):
+    @abstractmethod
+    def get_charge(self, days_rented: int) -> float:
+        pass
+
+    @abstractmethod
+    def get_frequent_renter_points(self, days_rented: int) -> int:
+        pass
+
+
+class RegulaPrice(Price):
+    pass
+
+
+class NewReleasePrice(Price):
+    pass
+
+
+class ChildrenPrice(Price):
+    pass
+
+
 class Book:
 
     REGULAR: int = 0
